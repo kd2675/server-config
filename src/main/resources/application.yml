@@ -1,0 +1,24 @@
+server:
+  port: 10220
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configs/
+#        git:
+#          uri: https://github.com/kd2675/server-config.git
+#          default-label: master
+#          search-paths: configs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, refresh, beans
+  endpoint:
+    health:
+      show-details: always
