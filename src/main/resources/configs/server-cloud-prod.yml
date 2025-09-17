@@ -1,0 +1,147 @@
+server:
+  port: 10200
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kimd0.iptime.org:10210/eureka/  # 유레카 서버 주소
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+
+path:
+  server:
+    cloud:
+      host: kimd0.iptime.org
+      port: 10200
+      url: http://kimd0.iptime.org:10200
+    batch:
+      host: kimd0.iptime.org
+      port: 10260
+      url: http://kimd0.iptime.org:10260
+    file:
+      host: kimd0.iptime.org
+      port: 10270
+      url: http://kimd0.iptime.org:10270
+    socket:
+      host: kimd0.iptime.org
+      port: 10280
+      url: http://kimd0.iptime.org:10280
+    member:
+      host: kimd0.iptime.org
+      port: 10290
+      url: http://kimd0.iptime.org:10290
+  service:
+    batch:
+      host: kimd0.iptime.org
+      port1: 10180
+      port2: 10181
+      port3: 10182
+      url: http://kimd0.iptime.org:10180
+    cocoin:
+      host: kimd0.iptime.org
+      port: 10190
+      url: http://kimd0.iptime.org:10190
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  data:
+    redis:
+      port: 6379
+      host: redis-10480
+  session:
+    store-type: redis
+
+rootPath: C:\\
+rootImagePath: C:\\image
+
+database:
+  datasource:
+    pub:
+      master:
+        url: jdbc:mysql://mysql-10490:3306/REP?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+      slave1:
+        url: jdbc:mysql://mysql-10490:3306/REP?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+    log:
+      master:
+        url: jdbc:mysql://mysql-10490:3306/LOG?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+      slave1:
+        url: jdbc:mysql://mysql-10490:3306/LOG?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+    cocoin:
+      master:
+        url: jdbc:mysql://mysql-10490:3306/REP?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+      slave1:
+        url: jdbc:mysql://mysql-10490:3306/REP?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+    mattermost:
+      master:
+        url: jdbc:mysql://mysql-10490:3306/CRAWLING?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+      slave1:
+        url: jdbc:mysql://mysql-10490:3306/CRAWLING?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+    coin:
+      master:
+        url: jdbc:mysql://mysql-10490:3306/CRAWLING?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
+      slave1:
+        url: jdbc:mysql://mysql-10490:3306/CRAWLING?zeroDateTimeBehavior=convertToNull&useLegacyDatetimeCode=false&serverTimezone=Asia/Seoul&noAccessToProcedureBodies=true&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        maximum-pool-size: 8
+        connection-timeout: 30000
+        maxLifetime: 1800000
