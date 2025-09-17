@@ -1,29 +1,13 @@
-server:
-  port: 10220
-
 spring:
   application:
     name: server-config
   profiles:
-    active: native
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: classpath:/configs/
-#        git:
-#          uri: https://github.com/kd2675/server-config.git
-#          default-label: master
-#          search-paths: configs
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://kimd0.iptime.org:10210/eureka/  # 유레카 서버 주소
-    fetch-registry: true
-    register-with-eureka: true
-  instance:
-    prefer-ip-address: true
+    active: local
+    group:
+      local: local
+      test: test
+      dev: dev
+      prod: prod
 
 management:
   endpoints:
