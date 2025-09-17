@@ -16,6 +16,15 @@ spring:
 #          default-label: master
 #          search-paths: configs
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kimd0.iptime.org:10210/eureka/  # 유레카 서버 주소
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+
 management:
   endpoints:
     web:
