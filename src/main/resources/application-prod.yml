@@ -11,6 +11,8 @@ eureka:
     prefer-ip-address: true
 
 spring:
+  profiles:
+    active: native
   config:
     activate:
       on-profile: prod
