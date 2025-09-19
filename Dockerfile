@@ -23,5 +23,6 @@ WORKDIR /app
 
 COPY --from=builder /build/server-config/build/libs/*.jar ./app.jar
 ENV USE_PROFILE dev
+ENV USE_EUREKA_URL http://kimd0.iptime.org:20210/eureka/
 
-ENTRYPOINT ["java", "-Dspring.profiles.active=${USE_PROFILE}", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=${USE_PROFILE}", "-Deureka.client.service-url.defaultZone=${USE_EUREKA_URL}", "-jar", "/app/app.jar"]
