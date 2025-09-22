@@ -1,0 +1,26 @@
+server:
+  port: 20230
+
+spring:
+  kafka:
+    bootstrap-servers: kafka-29092:9092
+    consumer:
+      group-id: business-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      spring.json.trusted.packages: "*"
+      spring.json.value.default.type: "com.server.bus.payloads.KafkaPayloadVO"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://kimd0.iptime.org:20210/eureka/  # 유레카 서버 주소
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true

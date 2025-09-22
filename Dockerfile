@@ -21,6 +21,10 @@ RUN gradle :server-config:clean :server-config:build --no-daemon --parallel
 FROM openjdk:17-slim
 WORKDIR /app
 
+RUN apt-get update
+
+RUN apt-get install -y curl
+
 COPY --from=builder /build/server-config/build/libs/*.jar ./app.jar
 ENV USE_PROFILE dev
 ENV USE_EUREKA_URL http://kimd0.iptime.org:20210/eureka/
