@@ -3,9 +3,9 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: kafka-19092:9092
+    bootstrap-servers: kafka-9092:9092
     consumer:
-      group-id: business-group
+      group-id: group-prod
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
@@ -14,7 +14,7 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     properties:
       spring.json.trusted.packages: "*"
-      spring.json.value.default.type: "com.server.bus.payloads.KafkaPayloadVO"
+      spring.json.value.default.type: "org.example.core.vo.KafkaPayloadVO"
 
 eureka:
   client:
