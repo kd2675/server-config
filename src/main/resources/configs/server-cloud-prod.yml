@@ -23,6 +23,10 @@ eureka:
     register-with-eureka: true
   instance:
     prefer-ip-address: true
+    health-check-url-path: /actuator/health
+    status-page-url-path: /actuator/info
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
 
 path:
   server:
