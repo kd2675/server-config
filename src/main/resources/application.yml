@@ -8,7 +8,9 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
   instance:
+    hostname: kimd0.iptime.org
     prefer-ip-address: true
+    ip-address: ${eureka.instance.hostname}
 
 spring:
   application:

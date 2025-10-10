@@ -23,7 +23,9 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
   instance:
-    prefer-ip-address: true
+    hostname: kimd0.iptime.org
+    prefer-ip-address: false
+    ip-address: ${eureka.instance.hostname}
     health-check-url-path: /actuator/health
     status-page-url-path: /actuator/info
     lease-renewal-interval-in-seconds: 30
